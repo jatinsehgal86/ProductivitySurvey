@@ -7,7 +7,7 @@
 <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="js/custom.js"></script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 $("#broadband").change(function() {    
 	
 	var value = $("#broadband option:selected").val();
@@ -15,7 +15,7 @@ $("#broadband").change(function() {
 	
 	
 });  
-</script>
+</script> -->
 </head>
 <body>
 	<form class="form-horizontal">
