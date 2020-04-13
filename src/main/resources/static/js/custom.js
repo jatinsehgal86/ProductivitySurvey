@@ -23,8 +23,23 @@
 		var positiveValue = lessTravelValue + flexiValue;
 		var negativeValue = broadbandValue + powerValue + wellBeingValue + distractionValue + 
 		homeChoresValue + meetingsValue + motivationValue + turnAroundValue;
-		$("#total").val(positiveValue - negativeValue);
+		var totalValue = positiveValue - negativeValue;
+		if(totalValue < 60 && totalValue > -60) {
+			totalValue = totalValue + " min";
+		} else {
+			var hr = Math.floor((Math.abs(totalValue))/60);
+			var min = (Math.abs(totalValue))%60;
+			if(positiveValue < negativeValue) {
+				hr = -1 * hr;
+			}
+			if(min == 0) {
+				totalValue = hr + " hr";
+			} else {
+				totalValue = hr + " hr " + min + " min";
+			}
+		}
 		
+		$("#total").val(totalValue);
 		
 		
 //		$("#total").val($("#lessTravel option:selected").val() + $("#flexiTimings option:selected").val());

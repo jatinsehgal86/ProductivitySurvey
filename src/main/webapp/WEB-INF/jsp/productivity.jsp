@@ -34,15 +34,32 @@ $("#broadband").change(function() {
 
 				</div>
 			</div>
-
 			<!-- Text input : Domain-->
-			<div class="form-group">
+			<!-- <div class="form-group">
 				<label class="col-md-4 control-label" for="domain">Domain</label>
 				<div class="col-md-2">
 					<input id="domain" name="domain" type="text"
 						placeholder="FM/EUROPA etc" class="form-control input-md"
 						required="required">
 
+				</div>
+			</div>
+ -->			
+			<!-- Select Basic: Domain -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="domain">Domain
+				</label>
+				<div class="col-md-2">
+					<select id="domain" name="domain" class="form-control">
+						<option value="AM">Application Management</option>
+						<option value="AF">Asset Finance</option>
+						<option value="CRM">CRM/eFlex/P&BM</option>
+						<option value="DD">Digital Distribution</option>
+						<option value="BAO">eOBAO</option>
+						<option value="Lend">Lending</option>
+						<option value="TB">Transaction Banking</option>
+						<option value="WC">Working Capital</option>
+					</select>
 				</div>
 			</div>
 
@@ -287,7 +304,7 @@ $("#broadband").change(function() {
 					gain/loss (in minutes) per day</label>
 				<div class="col-md-2">
 					<input id="total" name="total" type="text" placeholder="0"
-						class="form-control input-md"> <span class="help-block">Net
+						class="form-control input-md" disabled="disabled"> <span class="help-block">Net
 						total gain or loss of productivity in a day</span>
 				</div>
 			</div>
