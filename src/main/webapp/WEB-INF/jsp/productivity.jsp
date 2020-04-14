@@ -1,24 +1,15 @@
 <html>
 <head>
-<title>Welcome</title>
+<title>Productivity Survey</title>
 <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
 	rel="stylesheet">
 <link href="css/custom.css" rel="stylesheet">
 <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="js/custom.js"></script>
-<!-- <script type="text/javascript">
-$("#broadband").change(function() {    
-	
-	var value = $("#broadband option:selected").val();
-	$("#total").val(value);
-	
-	
-});  
-</script> -->
 </head>
 <body>
-	<form class="form-horizontal">
+	<form action="/submit" method="post" class="form-horizontal">
 		<fieldset>
 
 			<!-- Form Name -->
@@ -31,24 +22,11 @@ $("#broadband").change(function() {
 				<div class="col-md-2">
 					<input id="name" name="name" type="text" placeholder="name"
 						class="form-control input-md" required="required">
-
 				</div>
 			</div>
-			<!-- Text input : Domain-->
-			<!-- <div class="form-group">
-				<label class="col-md-4 control-label" for="domain">Domain</label>
-				<div class="col-md-2">
-					<input id="domain" name="domain" type="text"
-						placeholder="FM/EUROPA etc" class="form-control input-md"
-						required="required">
-
-				</div>
-			</div>
- -->			
 			<!-- Select Basic: Domain -->
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="domain">Domain
-				</label>
+				<label class="col-md-4 control-label" for="domain">Domain </label>
 				<div class="col-md-2">
 					<select id="domain" name="domain" class="form-control">
 						<option value="AM">Application Management</option>
@@ -64,7 +42,7 @@ $("#broadband").change(function() {
 			</div>
 
 			<h3 align="center" style="text-decoration: underline;">Daily
-				Productivity Loss (hours)</h3>
+				Productivity Loss</h3>
 			<br />
 			<!-- Select Basic: Broadband -->
 			<div class="form-group">
@@ -240,20 +218,9 @@ $("#broadband").change(function() {
 				</div>
 			</div>
 
-			<!-- Text input : Turn Around Time-->
-			<!-- <div class="form-group">
-  <label class="col-md-4 control-label" for="turnAroundTime">Turn Around Time</label>  
-  <div class="col-md-4">
-  <input id="turnAroundTime" name="turnAroundTime" type="text" placeholder="0" class="form-control input-md">
-  <span class="help-block">increased turn around time for issue resolution ( in min)</span>  
-  </div>
-</div> -->
-
-
 			<h3 align="center" style="text-decoration: underline;">Daily
-				Productivity Gain (hours)</h3>
+				Productivity Gain</h3>
 			<br />
-
 
 			<!-- Select Basic: Lack of Travel -->
 			<div class="form-group">
@@ -297,19 +264,20 @@ $("#broadband").change(function() {
 				</div>
 			</div>
 
-
 			<!-- Text input : Net Total-->
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="total">Total
-					gain/loss (in minutes) per day</label>
+					gain/loss of time per day</label>
 				<div class="col-md-2">
 					<input id="total" name="total" type="text" placeholder="0"
-						class="form-control input-md" disabled="disabled"> <span class="help-block">Net
-						total gain or loss of productivity in a day</span>
+						class="form-control input-md" disabled="disabled"> <span
+						class="help-block">Net total gain or loss of productivity
+						in a day</span>
 				</div>
 			</div>
-
-
+			<div class="form-group" align="center">
+			<input type="submit" class="btn btn-primary btn-lg"  value="Submit">
+			</div>
 		</fieldset>
 	</form>
 </body>
