@@ -3,14 +3,38 @@
  */
 package com.productivity.survey;
 
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+import javax.persistence.*;
+
+
+
 /**
  * @author user
  *
  */
+@Entity
 public class SurveyDTO {
+	
+	 @Id
+	 @GeneratedValue(strategy = GenerationType.IDENTITY)   
+	 private Long id;
+
+	public LocalDate getSurveyDate() {
+		return surveyDate;
+	}
+	public void setSurveyDate(LocalDate surveyDate) {
+		this.surveyDate = surveyDate;
+	}
 
 	private String name;
+	
+	private LocalDate surveyDate=LocalDate.now();
+	
 	private String domain;
+	
 	private int broadband;
 	private int power;
 	private int wellBeing;
@@ -22,6 +46,7 @@ public class SurveyDTO {
 	private int lessTravel;
 	private int flexiTimings;
 	private int total; 
+	private LocalDateTime updated=LocalDateTime.now();
 	/**
 	 * @return the name
 	 */
@@ -178,6 +203,20 @@ public class SurveyDTO {
 	public void setTotal(int total) {
 		this.total = total;
 	}
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public LocalDateTime getUpdated() {
+		return updated;
+	}
+	public void setUpdated(LocalDateTime updated) {
+		this.updated = updated;
+	}
+	
 	@Override
 	public String toString() {
 		return "SurveyDTO [name=" + name + ", domain=" + domain + ", broadband=" + broadband + ", power=" + power
