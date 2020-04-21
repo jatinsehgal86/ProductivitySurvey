@@ -218,6 +218,7 @@
 				</div>
 			</div>
 
+
 			<h3 align="center" style="text-decoration: underline;">Daily
 				Productivity Gain</h3>
 			<br />
@@ -275,8 +276,11 @@
 						in a day</span>
 				</div>
 			</div>
+			<input type="hidden" name="netTotal" id="netTotal">
 			<div class="form-group" align="center">
-			<input type="submit" class="btn btn-primary btn-lg"  value="Submit">
+				<div class="col-md-6" align="right">
+					<input type="submit" class="btn btn-primary btn-lg" value="Submit">
+				</div>
 			</div>
 		</fieldset>
 	</form>

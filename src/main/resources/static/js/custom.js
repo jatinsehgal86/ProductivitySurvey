@@ -24,6 +24,7 @@
 		var negativeValue = broadbandValue + powerValue + wellBeingValue + distractionValue + 
 		homeChoresValue + meetingsValue + motivationValue + turnAroundValue;
 		var totalValue = positiveValue - negativeValue;
+		$("#netTotal").val(totalValue);
 		if(totalValue < 60 && totalValue > -60) {
 			totalValue = totalValue + " min";
 		} else {
