@@ -45,8 +45,9 @@ public class SurveyDTO {
 	private int turnAroundTime;
 	private int lessTravel;
 	private int flexiTimings;
-	private int total; 
+	private String total; 
 	private LocalDateTime updated=LocalDateTime.now();
+	private int netTotal;
 	/**
 	 * @return the name
 	 */
@@ -194,13 +195,13 @@ public class SurveyDTO {
 	/**
 	 * @return the total
 	 */
-	public int getTotal() {
+	public String getTotal() {
 		return total;
 	}
 	/**
 	 * @param total the total to set
 	 */
-	public void setTotal(int total) {
+	public void setTotal(String total) {
 		this.total = total;
 	}
 	
@@ -216,6 +217,19 @@ public class SurveyDTO {
 	public void setUpdated(LocalDateTime updated) {
 		this.updated = updated;
 	}
+	/**
+	 * @return the netTotal
+	 */
+	public int getNetTotal() {
+		return netTotal;
+	}
+	/**
+	 * @param netTotal the netTotal to set
+	 */
+	public void setNetTotal(int netTotal) {
+		this.netTotal = netTotal;
+	}
+	
 	
 	@Override
 	public String toString() {
@@ -223,7 +237,7 @@ public class SurveyDTO {
 				+ ", wellBeing=" + wellBeing + ", kidDistraction=" + kidDistraction + ", homeChores=" + homeChores
 				+ ", extraMeetings=" + extraMeetings + ", decreasedMotivation=" + decreasedMotivation
 				+ ", turnAroundTime=" + turnAroundTime + ", lessTravel=" + lessTravel + ", flexiTimings=" + flexiTimings
-				+ ", total=" + total + "]";
+				+ ", total=" + total + ", netTotal=" + netTotal + "]";
 	}
 	
 }
