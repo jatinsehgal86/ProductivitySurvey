@@ -41,9 +41,30 @@
 		}
 		
 		$("#total").val(totalValue);
-		
-		
-//		$("#total").val($("#lessTravel option:selected").val() + $("#flexiTimings option:selected").val());
-
 	});  
+	
+	
+	$("#domainReport").change(function() {
+		var selectedVal = $("#domainReport option:selected").val();
+		$.get("/domainData/" + selectedVal, function(domainData,status,xhr){
+			$("#domainDataTableBody").empty();
+			for(var i =0; i< domainData.length; i++) {
+				$('#domainDataTable').append('<tr> <td>' + domainData[i].name + '</td>' +
+				'<td>' + domainData[i].domain + '</td>' +
+				'<td>' + domainData[i].broadband + '</td>' +
+				'<td>' + domainData[i].power + '</td>' +
+				'<td>' + domainData[i].wellBeing + '</td>' +
+				'<td>' + domainData[i].kidDistraction + '</td>' +
+				'<td>' + domainData[i].homeChores + '</td>' +
+				'<td>' + domainData[i].extraMeetings + '</td>' +
+				'<td>' + domainData[i].decreasedMotivation + '</td>' +
+				'<td>' + domainData[i].turnAroundTime + '</td>' +
+				'<td>' + domainData[i].lessTravel + '</td>' +
+				'<td>' + domainData[i].flexiTimings + '</td>' +
+				'<td>' + domainData[i].total + '</td>' +
+				'</tr>');
+			}
+		});
+	});
+	
  });

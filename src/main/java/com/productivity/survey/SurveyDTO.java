@@ -18,7 +18,27 @@ import javax.persistence.*;
 @Entity
 public class SurveyDTO {
 	
-	 @Id
+	public SurveyDTO( String name, String domain, int broadband, int power, int wellBeing,
+			int kidDistraction, int homeChores, int extraMeetings, int decreasedMotivation, int turnAroundTime,
+			int lessTravel, int flexiTimings, String total, int netTotal) {
+		super();
+		this.name = name;
+		this.domain = domain;
+		this.broadband = broadband;
+		this.power = power;
+		this.wellBeing = wellBeing;
+		this.kidDistraction = kidDistraction;
+		this.homeChores = homeChores;
+		this.extraMeetings = extraMeetings;
+		this.decreasedMotivation = decreasedMotivation;
+		this.turnAroundTime = turnAroundTime;
+		this.lessTravel = lessTravel;
+		this.flexiTimings = flexiTimings;
+		this.total = total;
+		this.netTotal = netTotal;
+	}
+
+	@Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)   
 	 private Long id;
 
