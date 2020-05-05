@@ -108,7 +108,7 @@ public class SurveyController {
 		
 		for(int i = 1; i < 11; i++)
 			surveyData.add(new SurveyDTO("Kumar" + i, "WC", 15, 30, 45, 60, 90, 120, 180, 240, 300, 480, null, 0));
-		domainMap.put("CRM", surveyData);
+		domainMap.put("WC", surveyData);
 		allDomainData.addAll(surveyData);
 		surveyData = new ArrayList<SurveyDTO>();
 		
