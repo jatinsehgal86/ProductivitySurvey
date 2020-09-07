@@ -5,9 +5,12 @@ package com.productivity.survey;
 
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 
 
@@ -15,8 +18,10 @@ import javax.persistence.*;
  * @author user
  *
  */
-@Entity
+@Entity(name = "Survey_DTO")
 public class SurveyDTO {
+	
+	public SurveyDTO() {}
 	
 	public SurveyDTO( String name, String domain, int broadband, int power, int wellBeing,
 			int kidDistraction, int homeChores, int extraMeetings, int decreasedMotivation, int turnAroundTime,
@@ -36,6 +41,7 @@ public class SurveyDTO {
 		this.flexiTimings = flexiTimings;
 		this.total = total;
 		this.netTotal = netTotal;
+		this.surveyDate = LocalDate.now();
 	}
 
 	@Id
@@ -49,10 +55,15 @@ public class SurveyDTO {
 		this.surveyDate = surveyDate;
 	}
 
+	@Column(name = "name")
 	private String name;
+	
+	@Column(name = "racf")
+	private String racf;
 	
 	private LocalDate surveyDate=LocalDate.now();
 	
+	@Column(name = "domain")
 	private String domain;
 	
 	private int broadband;
@@ -66,7 +77,7 @@ public class SurveyDTO {
 	private int lessTravel;
 	private int flexiTimings;
 	private String total; 
-	private LocalDateTime updated=LocalDateTime.now();
+//	private LocalDateTime updated=LocalDateTime.now();
 	private int netTotal;
 	/**
 	 * @return the name
@@ -231,12 +242,6 @@ public class SurveyDTO {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public LocalDateTime getUpdated() {
-		return updated;
-	}
-	public void setUpdated(LocalDateTime updated) {
-		this.updated = updated;
-	}
 	/**
 	 * @return the netTotal
 	 */
@@ -253,11 +258,23 @@ public class SurveyDTO {
 	
 	@Override
 	public String toString() {
-		return "SurveyDTO [name=" + name + ", domain=" + domain + ", broadband=" + broadband + ", power=" + power
+		return "SurveyDTO [name=" + name + ", racf=" + racf + ", domain=" + domain + ", broadband=" + broadband + ", power=" + power
 				+ ", wellBeing=" + wellBeing + ", kidDistraction=" + kidDistraction + ", homeChores=" + homeChores
 				+ ", extraMeetings=" + extraMeetings + ", decreasedMotivation=" + decreasedMotivation
 				+ ", turnAroundTime=" + turnAroundTime + ", lessTravel=" + lessTravel + ", flexiTimings=" + flexiTimings
 				+ ", total=" + total + ", netTotal=" + netTotal + "]";
+	}
+	/**
+	 * @return the racf
+	 */
+	public String getRacf() {
+		return racf;
+	}
+	/**
+	 * @param racf the racf to set
+	 */
+	public void setRacf(String racf) {
+		this.racf = racf;
 	}
 	
 }

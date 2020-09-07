@@ -24,7 +24,7 @@
 						class="form-control input-md" required="required">
 				</div>
 				
-				<label class="col-md-1 control-label" for="name">RACF</label>
+				<label class="col-md-1 control-label" for="racf">RACF</label>
 				<div class="col-md-2">
 					<input id="racf" name="racf" type="text" placeholder="racf"
 						class="form-control input-md" required="required">
@@ -289,7 +289,7 @@
 						class="help-block">Net total gain or loss of productivity
 						in a day</span>
 				</div>
-			<input type="hidden" name="netTotal" id="netTotal">
+			<input type="hidden" name="netTotal" id="netTotal" type="text">
 			<div class="form-group " style="text-align:left">
 				<div class="col-md-4" >
 					<input type="submit" class="btn btn-primary btn-lg" value="Submit">

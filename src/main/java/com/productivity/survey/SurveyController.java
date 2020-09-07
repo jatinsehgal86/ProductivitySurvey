@@ -33,31 +33,25 @@ public class SurveyController {
 	public String submitData(SurveyDTO surveyDTO) {
 		
 		System.out.println(surveyDTO);
-		
 		Optional<SurveyDTO> dbSurveyDTO=repository.findOneByNameAndSurveyDate(surveyDTO.getName(),surveyDTO.getSurveyDate());
-		if(dbSurveyDTO.isPresent()==true)
+		if(dbSurveyDTO.isPresent())
 			surveyDTO.setId(dbSurveyDTO.get().getId());
 		
-		repository.save(surveyDTO);
-			
-		
-		
+		repository.saveAndFlush(surveyDTO);
 		return "success";
 	}
 	
 	@GetMapping("/report")
 	public String reportAllDomain(Model model) {
 		
-		prepareSurveyData();
+		allDomainData = repository.findAll();
 		model.addAttribute("domainData",allDomainData);
 		return "domainReport";
 	}
 	
 	@GetMapping("/domainData/{domain}")
 	public @ResponseBody List<SurveyDTO> report(@PathVariable String domain) {
-		System.out.println("*************" + domain + "***********");
-		prepareSurveyData();
-		List<SurveyDTO> surveyData = domainMap.get(domain);
+		List<SurveyDTO> surveyData = repository.findAllByDomain(domain);
 		return surveyData;
 	}
 	

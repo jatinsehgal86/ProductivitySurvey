@@ -68,7 +68,7 @@
 				<td> ${queryResult.turnAroundTime} </td>
 				<td> ${queryResult.lessTravel} </td>
 				<td> ${queryResult.flexiTimings} </td>
-				<td> ${queryResult.total} </td>
+				<td> ${queryResult.netTotal} </td>
 					</tr>
 				</c:forEach>
 
